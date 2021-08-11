@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class ScreenNameList extends StatelessWidget {
   String? screenTittle;
@@ -22,7 +23,7 @@ class ScreenNameList extends StatelessWidget {
             child: Text(
               screenTittle!,
               style: TextStyle(
-                color: Colors.black54,
+                color: blacklightColor,
                 fontSize: 23
                 ),
             ),
@@ -55,7 +56,7 @@ class ScreenNameList extends StatelessWidget {
             padding: const EdgeInsets.only(left:20.0,right: 20,top: 10,bottom: 25),
             child: Container(
               height: 0.5,
-              color: Colors.grey,
+              color: greyColor,
             ),
           )
     

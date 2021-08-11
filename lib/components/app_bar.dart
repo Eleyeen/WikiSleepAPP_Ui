@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class AppBarScreen extends StatelessWidget {
   String? screenName;
@@ -7,10 +8,10 @@ class AppBarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 30.0),
+      padding: const EdgeInsets.only(top: 26.0),
       child: Container(
         color: Colors.white,
-        height: 100,
+        height: 110,
         child: Column(
           children: [
             Row(
@@ -26,7 +27,7 @@ class AppBarScreen extends StatelessWidget {
                       child: Text(
                         'W',
                         style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,
-                        color: Colors.blue
+                        color: blueColor
                         ),
                       ),
                     ),
@@ -52,7 +53,7 @@ class AppBarScreen extends StatelessWidget {
                     'SeeAll',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.blue
+                      color: blackColor
                     ),
                   ),
                 ),

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 import 'package:wiki_sleep/components/app_bar.dart';
+import 'package:wiki_sleep/components/bottomSheet.dart';
+import 'package:wiki_sleep/components/bottom_navigation_items.dart';
+import 'package:wiki_sleep/components/button.dart';
 import 'package:wiki_sleep/components/screen_name.dart';
 import 'package:wiki_sleep/screens/categories_screen.dart';
+import 'package:wiki_sleep/screens/history_episodes_screen.dart';
 import 'package:wiki_sleep/screens/new_stuff_screen.dart';
 
 class MainHomeScreen extends StatefulWidget {
@@ -15,21 +20,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text('Profile'))
-        ],
-      ),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           AppBarScreen(
@@ -47,7 +38,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             screenDec: 'BIORAPHY / MILES DAVIS',
             color: Colors.green,
             onPress: () {
-              print('jsdkajdhasjdhkasdakjshdaksjdha');
+              print('new Stuff');
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NewStuffScreen()),
@@ -58,13 +49,21 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             screenTittle: 'Discover',
             screenDec: '',
             color: Colors.white,
-          
+            onPress: () {
+              print('history');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HistoryEpisodesScreen()),
+              );
+            },
           ),
           ScreenNameList(
             screenTittle: 'Categories',
             screenDec: '',
             color: Colors.white,
-             onPress: () {
+            onPress: () {
+              print('categories');
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => CategoriesScreen()),
@@ -80,9 +79,15 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             screenTittle: 'Recently Played',
             screenDec: '',
             color: Colors.white,
+            onPress: () {
+              print("Played");
+              BottomSheeted(context);
+            },
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationItem(),
     );
   }
+
 }

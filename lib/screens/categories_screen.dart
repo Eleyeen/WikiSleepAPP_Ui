@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wiki_sleep/components/app_bar.dart';
+import 'package:wiki_sleep/components/bottom_navigation_items.dart';
 import 'package:wiki_sleep/components/cad_categories.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -14,6 +15,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+     bottomNavigationBar: BottomNavigationItem(),
+
       body: Column(
         children: [
           AppBarScreen(screenName: 'Categories'),
