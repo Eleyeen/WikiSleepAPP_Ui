@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class HistoryCard extends StatelessWidget {
@@ -33,7 +34,7 @@ class HistoryCard extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 10.0, top: 20),
                   child: Text(
                     'Sam  Cooke',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+                    style: GoogleFonts.barlow(fontSize: 18, fontWeight: FontWeight.w400)
                   ),
                 ),
                 Padding(

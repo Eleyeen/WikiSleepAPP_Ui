@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class CardNewStuff extends StatelessWidget {
@@ -68,10 +69,12 @@ class CardNewStuff extends StatelessWidget {
               ]),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8),
+              padding: const EdgeInsets.only(left: 18.0, right: 38),
               child: Text(
                 strName!,
-                style: TextStyle(fontSize: 22, color: blackColor),
+                style: GoogleFonts.barlow(
+                  fontSize: 22, color: blackColor,fontStyle: FontStyle.italic
+                )
               ),
             ),
             Padding(

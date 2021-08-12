@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardCategories extends StatelessWidget {
   // const CardCategories({  }) ;
@@ -31,9 +32,9 @@ class CardCategories extends StatelessWidget {
           padding: const EdgeInsets.only(left:12.0),
           child: Text(
             'Anthony bourdain',
-            style: TextStyle(
+            style: GoogleFonts.barlow(
               fontSize: 15
-            ),
+            )
           ),
         ),
         Padding(
