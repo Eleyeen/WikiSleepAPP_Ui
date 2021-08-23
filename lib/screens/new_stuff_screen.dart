@@ -40,7 +40,10 @@ class _NewStuffScreenState extends State<NewStuffScreen> {
                 },
               ),
             ),
-          ],
+        
+        Container(
+          height:50
+        )  ],
         ),
       ),
     );

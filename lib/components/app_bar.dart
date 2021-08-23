@@ -8,9 +8,20 @@ class AppBarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 26.0),
+      padding: const EdgeInsets.only(top: 0.0),
       child: Container(
+        decoration: BoxDecoration (
         color: Colors.white,
+
+          boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 2,
+        blurRadius: 4,
+        offset: Offset(0, 2), // changes position of shadow
+      ),
+    ],
+        ),
         height: 110,
         child: Column(
           children: [
@@ -53,7 +64,7 @@ class AppBarScreen extends StatelessWidget {
                     'SeeAll',
                     style: TextStyle(
                       fontSize: 16,
-                      color: blackColor
+                      color: blueColor
                     ),
                   ),
                 ),

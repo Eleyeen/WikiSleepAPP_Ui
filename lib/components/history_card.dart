@@ -8,9 +8,10 @@ class HistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left:10.0,right: 10,top: 8),
+      padding: const EdgeInsets.only(left: 10.0, right: 10, top: 8),
       child: Container(
-        color: whiteColor,
+        decoration: BoxDecoration(
+            color: whiteColor, border: Border.all(color: blacklightColor)),
         child: Row(
           children: [
             Container(
@@ -18,8 +19,9 @@ class HistoryCard extends StatelessWidget {
               width: 100,
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    bottomLeft: Radius.circular(15)),
+                    // topLeft: Radius.circular(15),
+                    // bottomLeft: Radius.circular(15)
+                    ),
                 child: Image.asset(
                   'images/cardpic.png',
                   fit: BoxFit.fill,
@@ -32,13 +34,12 @@ class HistoryCard extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0, top: 20),
-                  child: Text(
-                    'Sam  Cooke',
-                    style: GoogleFonts.barlow(fontSize: 18, fontWeight: FontWeight.w400)
-                  ),
+                  child: Text('Sam  Cooke',
+                      style: GoogleFonts.barlow(
+                          fontSize: 18, fontWeight: FontWeight.w400)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 35.0, left: 10),
+                  padding: const EdgeInsets.only(top: 15.0, left: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -47,7 +48,7 @@ class HistoryCard extends StatelessWidget {
                         style: TextStyle(fontSize: 14, color: greyColor),
                       ),
                       Container(
-                        width: 120,
+                        width: 90,
                       ),
                       Text(
                         'strTime!',
@@ -59,9 +60,10 @@ class HistoryCard extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(right:8.0,bottom: 50),
+              padding: const EdgeInsets.only(right: 8.0, bottom: 50),
               child: Icon(
-                Icons.favorite_border_outlined,color: greyColor,
+                Icons.favorite_border_outlined,
+                color: greyColor,
               ),
             )
           ],
