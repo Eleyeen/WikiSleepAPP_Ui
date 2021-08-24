@@ -3,7 +3,7 @@ import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class AppBarScreen extends StatelessWidget {
   String? screenName;
-  AppBarScreen(String s, {this.screenName});
+  AppBarScreen({this.screenName});
 
   @override
   Widget build(BuildContext context) {
