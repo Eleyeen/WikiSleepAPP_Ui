@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 import 'package:wiki_sleep/components/app_bar.dart';
-import 'package:wiki_sleep/components/bottom_navigation_items.dart';
+import 'package:wiki_sleep/components/rounded_button.dart';
 
 class SleepStuffScreen extends StatefulWidget {
   const SleepStuffScreen({ Key? key }) : super(key: key);
@@ -26,7 +26,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
             padding: const EdgeInsets.only(left:20,right: 20,top: 18),
             child: Container(
               alignment: Alignment.center,
-              height: 220,
+              height: 200,
               decoration: BoxDecoration(
                  border: Border.all(color: blacklightColor)
                ),
@@ -34,7 +34,8 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
                  child: Padding(
                    padding: const EdgeInsets.all(5.0),
                    child: Text(
-                     '         Wiki Sleep is \n Designed to help you \n     Relax and unwind',style: TextStyle(fontSize: 28),
+                     '         Wiki Sleep is \n Designed to help you \n     Relax and unwind',
+                     style: TextStyle(fontSize: 23),
                    ),
                  ),
                )
@@ -46,7 +47,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
             padding: const EdgeInsets.only(left:20,right: 20,top: 18),
             child: Container(
               alignment: Alignment.center,
-              height: 100,
+              height: 80,
               decoration: BoxDecoration(
                  border: Border.all(color: blacklightColor)
                ),
@@ -54,7 +55,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
                  child: Padding(
                    padding: const EdgeInsets.all(5.0),
                    child: Text(
-                     'What is Sleep Hypgiene',style: TextStyle(fontSize: 28),
+                     'What is Sleep Hypgiene',style: TextStyle(fontSize: 22),
                    ),
                  ),
                )
@@ -67,7 +68,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
             padding: const EdgeInsets.only(left:20,right: 20,top: 18),
             child: Container(
               alignment: Alignment.center,
-              height: 100,
+              height: 80,
               decoration: BoxDecoration(
                  border: Border.all(color: blacklightColor)
                ),
@@ -75,7 +76,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
                  child: Padding(
                    padding: const EdgeInsets.all(5.0),
                    child: Text(
-                     'thought Patters  & \n     Diversions',style: TextStyle(fontSize: 28),
+                     'thought Patters  & \n        Diversions',style: TextStyle(fontSize: 22),
                    ),
                  ),
                )
@@ -90,7 +91,7 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
             padding: const EdgeInsets.only(left:20,right: 20,top: 18),
             child: Container(
               alignment: Alignment.center,
-              height: 100,
+              height: 80,
               decoration: BoxDecoration(
                  border: Border.all(color: blacklightColor)
                ),
@@ -98,40 +99,22 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
                  child: Padding(
                    padding: const EdgeInsets.all(5.0),
                    child: Text(
-                     'Sleep Deprivation & \n      Mental Healt',style: TextStyle(fontSize: 28),
+                     'Sleep Deprivation & \n        Mental Healt',style: TextStyle(fontSize: 22),
                    ),
                  ),
                )
 
             ),
           ),
-        
-             Padding(
-                padding: const EdgeInsets.only(left:18,top: 18,right: 18,bottom: 38),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 1,
-                  height: 50,
-                  child: ElevatedButton(
-                      child: Text('Share Wiki Sleep',
-                          style: TextStyle(fontSize: 18)),
-                      style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(whiteColor),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(blueColor),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                      side: BorderSide(color: blueColor)))),
-                      onPressed: () => null),
-                ),
-              )
-              ],
+        Padding(
+          padding: const EdgeInsets.only(left:40.0,right: 40),
+          child: RoundedButton(context, 'Share Wiki Sleep', 16, (){}),
+        )
+       ],
             ),
       ),
      
-      bottomNavigationBar: BottomNavigationItem(),
+      // bottomNavigationBar: BottomNavigationItem(),
       
       
     );

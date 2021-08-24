@@ -24,7 +24,7 @@ class _HistoryEpisodesScreenState extends State<HistoryEpisodesScreen> {
           children: [
             AppBarScreen(screenName: 'History Episodes'),
             Container(
-              height: MediaQuery.of(context).size.height / 2,
+              height: 379 ,
               width: 400,
               child: ListView.builder(
                 itemCount: 1,
@@ -37,12 +37,13 @@ class _HistoryEpisodesScreenState extends State<HistoryEpisodesScreen> {
                     strRead: 'read by Britt Buntain',
                     image: 'images/cardpic.png',
                     color: Colors.green,
+                    onpress: (){},
                   );
                 },
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery.of(context).size.height/1.4,
               width: 400,
               child: ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),

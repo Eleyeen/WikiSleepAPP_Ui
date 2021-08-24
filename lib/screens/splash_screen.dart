@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:wiki_sleep/screens/MainScreen.dart';
 import 'package:wiki_sleep/screens/main_home.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigationPage() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MainHomeScreen()),
+      MaterialPageRoute(builder: (context) => MainScreen()),
     );
   }
 

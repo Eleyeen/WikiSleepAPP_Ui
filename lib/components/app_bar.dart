@@ -3,22 +3,23 @@ import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 
 class AppBarScreen extends StatelessWidget {
   String? screenName;
-  AppBarScreen({this.screenName});
+  AppBarScreen(String s, {this.screenName});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 0.0),
+      padding: const EdgeInsets.only(top: 30.0),
       child: Container(
         decoration: BoxDecoration (
         color: Colors.white,
 
           boxShadow: [
       BoxShadow(
+        
         color: Colors.grey.withOpacity(0.5),
         spreadRadius: 2,
         blurRadius: 4,
-        offset: Offset(0, 2), // changes position of shadow
+        offset: Offset(0, 6), // changes position of shadow
       ),
     ],
         ),

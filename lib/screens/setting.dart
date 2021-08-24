@@ -19,9 +19,7 @@ class _SettingScreenState extends State<SettingScreen> {
       backgroundColor: whiteColor,
       body: SingleChildScrollView(
         child: Column(
-        
           children: [
-            
             Container(
               height: 120,
               color: whiteColor,
@@ -32,11 +30,12 @@ class _SettingScreenState extends State<SettingScreen> {
                       left: 28.0,
                     ),
                     child: GestureDetector(
-                      onTap: (){
-                         Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MainHomeScreen()),
-                );
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainHomeScreen()),
+                        );
                       },
                       child: Icon(
                         Icons.arrow_back_ios,
@@ -99,15 +98,13 @@ class _SettingScreenState extends State<SettingScreen> {
                     )
                   ],
                 )),
-
-                 Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  height: 0.5,
-                  color: Colors.grey,
-                ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                height: 0.5,
+                color: Colors.grey,
               ),
-              
+            ),
             ScreenNameList(
               screenTittle: 'Sleep Tips',
               screenDec: 'how to wikiSleep',
@@ -122,19 +119,19 @@ class _SettingScreenState extends State<SettingScreen> {
                 print('Contact');
               },
             ),
-               ScreenNameList(
-                           screenTittle: 'Manage Subscription',
-                           screenDec: 'update payment / cancel',
-                           color: Colors.white,
-                           onPress: () {
-                                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ManageSubscriptionScreen()),
+            ScreenNameList(
+              screenTittle: 'Manage Subscription',
+              screenDec: 'update payment / cancel',
+              color: Colors.white,
+              onPress: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ManageSubscriptionScreen()),
                 );
                 print("Setting");
-
-                           },
-                         ),
+              },
+            ),
           ],
         ),
       ),

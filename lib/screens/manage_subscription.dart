@@ -27,7 +27,7 @@ class ManageSubscriptionScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => SettingScreen()),
                 );
                     },
-                    child: Icon(Icons.arrow_back_ios,size: 30,)),
+                    child: Icon(Icons.arrow_back_ios,size: 25,)),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left:25.0,),

@@ -1,6 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 import 'package:wiki_sleep/components/button.dart';
+import 'package:wiki_sleep/screens/episodes_play_screen.dart';
 
   Future<dynamic> BottomSheeted(BuildContext context) {
     return showModalBottomSheet(
@@ -38,9 +40,9 @@ import 'package:wiki_sleep/components/button.dart';
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 40.0, right: 30, top: 40),
+                            left: 0.0, right: 0, top: 40),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Column(
                               children: [
@@ -49,7 +51,7 @@ import 'package:wiki_sleep/components/button.dart';
                                   color: greyColor,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
+                                  padding: const EdgeInsets.only(top: 8.0,left: 8),
                                   child: Text(
                                     'Add to Favourites',
                                     style: TextStyle(color: greyColor),
@@ -64,7 +66,7 @@ import 'package:wiki_sleep/components/button.dart';
                                   color: greyColor,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
+                                  padding: const EdgeInsets.only(top: 8.0,left: 8),
                                   child: Text(
                                     'Share Episode',
                                     style: TextStyle(color: greyColor),
@@ -110,10 +112,13 @@ import 'package:wiki_sleep/components/button.dart';
                       Padding(
                         padding: const EdgeInsets.only(
                             left: 40.0, right: 40, top: 20),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width / 1,
-                          child: Text(
-                            'Lucky Luciano is considered the father of modern organized crime in the United States and was the first official boss of the Genovese crime family. From humble beginnings as an Italian immigrant, Luciano rose to ultimate power through a combination of ruthlessness, calculated risk and an inescapable genius for profiting from crime. #WikiSleep #SleepStories #LuckyLuciano #Mafia #Sleep',
+                        child: SingleChildScrollView(
+                          child: Container(
+                            height: 145,
+                            width: MediaQuery.of(context).size.width / 1,
+                            child: Text(
+                              'Lucky Luciano is considered the father of modern organized crime in the United States and was the first official boss of the Genovese crime family. From humble beginnings as an Italian immigrant, Luciano rose to ultimate power through a combination of ruthlessness, calculated risk and an inescapable genius for profiting from crime. #WikiSleep #SleepStories #LuckyLuciano #Mafia #Sleep',
+                            ),
                           ),
                         ),
                       )
@@ -140,11 +145,42 @@ import 'package:wiki_sleep/components/button.dart';
                     )),
                 Positioned(
                   top: 230,
-                  left: 40,
-                  right: 40,
-                  child: Button(
-                    name: 'Listen to this Episode',
-                  ),
+                  left: 20,
+                  right: 20,
+                  child:   Padding(
+                padding: const EdgeInsets.only(left:18,top: 18,right: 18,bottom: 38),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1,
+                  height: 50,
+                  child: ElevatedButton(
+                      child: Text('Listen to this Episode',
+                          style: TextStyle(fontSize: 18)),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(whiteColor),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(blueColor),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      side: BorderSide(color: blueColor)))),
+                      onPressed: () {
+                         print('playyy');
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> EpisodesPlayScreen()));
+                    
+                      }),
+                ),
+              ),
+                  // child: GestureDetector(
+                  //   onTap: (){
+                      
+                  //   },
+                  //   child: Button(
+                  //     name: 'Listen to this Episode',
+                      
+                  //   ),
+                  // ),
                 )
               ],
             ),

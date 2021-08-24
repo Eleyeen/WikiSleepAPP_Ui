@@ -24,7 +24,7 @@ class ScreenNameList extends StatelessWidget {
               screenTittle!,
               style: TextStyle(
                 color: blacklightColor,
-                fontSize: 23
+                fontSize: 18
                 ),
             ),
           ),
@@ -44,7 +44,7 @@ class ScreenNameList extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left:8.0),
                   child: Text(
-                    screenDec!
+                    screenDec!,style: TextStyle(fontSize: 12),
                   ),
                 ),
                 

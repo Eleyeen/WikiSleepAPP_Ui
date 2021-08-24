@@ -16,45 +16,47 @@ class _RecentlyPlayedScreenState extends State<RecentlyPlayedScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteColor,
-      body: Column(
-        children: [
-           AppBarScreen(screenName: 'Recently Played'),
-          SizedBox(
-            height: 5,
-          ),
-                Container(
-              height: MediaQuery.of(context).size.height / 2,
-              width: 400,
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return HistoryCard();
-                },
-              ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+             AppBarScreen(screenName: 'Recently Played'),
+            SizedBox(
+              height: 5,
             ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 1,
-                height: 50,
-                child: ElevatedButton(
-                    child: Text('Discover',
-                        style: TextStyle(fontSize: 18)),
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(whiteColor),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(blueColor),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    side: BorderSide(color: blueColor)))),
-                    onPressed: () => null),
+                  Container(
+                height: MediaQuery.of(context).size.height / 1.4,
+                width: 400,
+                child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return HistoryCard();
+                  },
+                ),
               ),
-            )
-        ],
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1,
+                  height: 50,
+                  child: ElevatedButton(
+                      child: Text('Discover',
+                          style: TextStyle(fontSize: 18)),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(whiteColor),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(blueColor),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      side: BorderSide(color: blueColor)))),
+                      onPressed: () => null),
+                ),
+              )
+          ],
+        ),
       ),
 
       bottomNavigationBar: BottomNavigationItem(),

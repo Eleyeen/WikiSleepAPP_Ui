@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:wiki_sleep/screens/splash_screen.dart';
 
 void main() => runApp(
-    DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context)=>MyApp(),)
+    // DevicePreview(
+    // enabled: !kReleaseMode,
+    // builder: (context)=>
+    MyApp(),
+    // )
 );
   
 

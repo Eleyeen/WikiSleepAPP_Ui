@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 import 'package:wiki_sleep/components/app_bar.dart';
-import 'package:wiki_sleep/components/bottomSheet.dart';
-import 'package:wiki_sleep/components/bottom_navigation_items.dart';
-import 'package:wiki_sleep/components/button.dart';
+import 'package:wiki_sleep/components/rounded_button.dart';
 import 'package:wiki_sleep/components/screen_name.dart';
 import 'package:wiki_sleep/screens/categories_screen.dart';
 import 'package:wiki_sleep/screens/favorite.dart';
@@ -86,9 +83,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               },
             ),
             GestureDetector(
-              // onTap: (){
-              //   BottomSheeted(context);
-              // },
+             
               child: ScreenNameList(
                 screenTittle: 'Recently Played',
                 screenDec: '',
@@ -103,32 +98,14 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
             
-             Padding(
-                padding: const EdgeInsets.only(left:18,top: 18,right: 18,bottom: 38),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 1,
-                  height: 50,
-                  child: ElevatedButton(
-                      child: Text('Listen Offline',
-                          style: TextStyle(fontSize: 18)),
-                      style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(whiteColor),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(blueColor),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                      side: BorderSide(color: blueColor)))),
-                      onPressed: () => null),
-                ),
-              )
+            Padding(
+              padding: const EdgeInsets.only(left:40.0,right: 40),
+              child: RoundedButton(context, "Listen Offline", 16, (){})
+            )
               ],
             ),
       ),
      
-      bottomNavigationBar: BottomNavigationItem(),
     );
   }
 
