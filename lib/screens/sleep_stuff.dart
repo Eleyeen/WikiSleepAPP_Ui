@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
 import 'package:wiki_sleep/components/app_bar.dart';
 import 'package:wiki_sleep/components/rounded_button.dart';
+import 'package:wiki_sleep/components/sleep_stuff_bottom_sheet.dart';
 
 class SleepStuffScreen extends StatefulWidget {
   const SleepStuffScreen({ Key? key }) : super(key: key);
@@ -11,8 +13,10 @@ class SleepStuffScreen extends StatefulWidget {
 }
 
 class _SleepStuffScreenState extends State<SleepStuffScreen> {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
  backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -54,8 +58,13 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
                child:Center(
                  child: Padding(
                    padding: const EdgeInsets.all(5.0),
-                   child: Text(
-                     'What is Sleep Hypgiene',style: TextStyle(fontSize: 22),
+                   child: GestureDetector(
+                     onTap: (){
+                       SleepStuffBottomSheeted(context);
+                     },
+                     child: Text(
+                       'What is Sleep Hypgiene',style: TextStyle(fontSize: 22),
+                     ),
                    ),
                  ),
                )
@@ -108,7 +117,9 @@ class _SleepStuffScreenState extends State<SleepStuffScreen> {
           ),
         Padding(
           padding: const EdgeInsets.only(left:40.0,right: 40),
-          child: RoundedButton(context, 'Share Wiki Sleep', 16, (){}),
+          child: RoundedButton(context, 'Share Wiki Sleep', 16, () async {
+      Share.share('check out my website https://example.com');
+          }),
         )
        ],
             ),

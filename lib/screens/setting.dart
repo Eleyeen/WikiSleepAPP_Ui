@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
+import 'package:wiki_sleep/classes/Language.dart';
 import 'package:wiki_sleep/components/cad_categories.dart';
 import 'package:wiki_sleep/components/screen_name.dart';
+import 'package:wiki_sleep/localization/language_constants.dart';
+import 'package:wiki_sleep/main.dart';
 import 'package:wiki_sleep/screens/main_home.dart';
 import 'package:wiki_sleep/screens/manage_subscription.dart';
 
@@ -13,6 +16,11 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
+  void _changeLanguage(Language language) async {
+    Locale _locale = await setLocale(language.languageCode);
+    MyApp.setLocale(context, _locale);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,6 +139,34 @@ class _SettingScreenState extends State<SettingScreen> {
                 );
                 print("Setting");
               },
+            ),
+            Container(
+              child: Center(
+                  child: DropdownButton<Language>(
+                iconSize: 30,
+                hint: Text(getTranslated(context, 'change_language')),
+                onChanged: (
+                  Language? language) {
+                  _changeLanguage(language!);
+                },
+                items: Language.languageList()
+                    .map<DropdownMenuItem<Language>>(
+                      (e) => DropdownMenuItem<Language>(
+                        value: e,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Text(
+                              e.flag,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            Text(e.name)
+                          ],
+                        ),
+                      ),
+                    )
+                    .toList(),
+              )),
             ),
           ],
         ),

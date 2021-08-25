@@ -25,7 +25,7 @@ import 'package:wiki_sleep/screens/episodes_play_screen.dart';
                   child: Column(
                     children: [
                       Container(
-                        height: 270,
+                        height: 200,
                         width: MediaQuery.of(context).size.width / 1,
                         child: ClipRRect(
                           borderRadius: BorderRadius.only(
@@ -94,7 +94,7 @@ import 'package:wiki_sleep/screens/episodes_play_screen.dart';
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 40.0, right: 40, top: 30),
+                            left: 40.0, right: 40, top: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -112,13 +112,11 @@ import 'package:wiki_sleep/screens/episodes_play_screen.dart';
                       Padding(
                         padding: const EdgeInsets.only(
                             left: 40.0, right: 40, top: 20),
-                        child: SingleChildScrollView(
-                          child: Container(
-                            height: 145,
-                            width: MediaQuery.of(context).size.width / 1,
-                            child: Text(
-                              'Lucky Luciano is considered the father of modern organized crime in the United States and was the first official boss of the Genovese crime family. From humble beginnings as an Italian immigrant, Luciano rose to ultimate power through a combination of ruthlessness, calculated risk and an inescapable genius for profiting from crime. #WikiSleep #SleepStories #LuckyLuciano #Mafia #Sleep',
-                            ),
+                        child: Container(
+                          height: 145,
+                          width: MediaQuery.of(context).size.width / 1,
+                          child: Text(
+                            'Lucky Luciano is considered the father of modern organized crime in the United States and was the first official boss of the Genovese crime family. From humble beginnings as an Italian immigrant, Luciano rose to ultimate power through a combination of ruthlessness, calculated risk and an inescapable genius for profiting from crime. #WikiSleep #SleepStories #LuckyLuciano #Mafia #Sleep',
                           ),
                         ),
                       )
@@ -144,7 +142,7 @@ import 'package:wiki_sleep/screens/episodes_play_screen.dart';
                       ],
                     )),
                 Positioned(
-                  top: 230,
+                  top: 160,
                   left: 20,
                   right: 20,
                   child:   Padding(

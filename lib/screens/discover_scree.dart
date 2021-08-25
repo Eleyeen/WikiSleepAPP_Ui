@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:wiki_sleep/Global_Variables/global_colors.dart';
+import 'package:wiki_sleep/components/bottomSheet.dart';
+import 'package:wiki_sleep/components/card_new_stuff.dart';
 import 'package:wiki_sleep/components/history_card.dart';
-import 'package:wiki_sleep/screens/main_home.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+class DiscoverScreen extends StatefulWidget {
+  DiscoverScreen({Key? key}) : super(key: key);
 
   @override
-  _SearchScreenState createState() => _SearchScreenState();
+  _DiscoverScreenState createState() => _DiscoverScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +32,9 @@ class _SearchScreenState extends State<SearchScreen> {
                 ],
               ),
               child: Column(
+                
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -76,7 +80,14 @@ class _SearchScreenState extends State<SearchScreen> {
                         ],
                       ),
                     ),
-                  )
+                  ),
+                Padding(
+                  padding: const EdgeInsets.only(left:18.0,bottom: 10),
+                  child: Text(
+                    'Discover',
+                    style: TextStyle(fontSize: 24,),
+                  ),
+                )
                 ],
               ),
             ),
@@ -93,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           padding: const EdgeInsets.only(
                               left: 20.0, top: 20, bottom: 10),
                           child: Text(
-                            'Episodes',
+                            'Rexently Played',
                             style: TextStyle(
                               fontSize: 20,
                             ),
@@ -112,12 +123,41 @@ class _SearchScreenState extends State<SearchScreen> {
                     Container(
                       height: MediaQuery.of(context).size.height / 1.4,
                       child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: 4,
                         itemBuilder: (context, index) {
                           return HistoryCard();
                         },
                       ),
                     ),
+
+                      Container(
+              height: MediaQuery.of(context).size.height ,
+              // width: 400,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom:228.0),
+                child: ListView.builder(
+                  itemCount: 3,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return CardNewStuff(
+                      strBiography: 'BIOGRAPHY',
+                      strName: 'LUcky LUciano Godfather of  th mafia',
+                      strTime: '45 min',
+                      strRead: 'read by Britt Buntain',
+                      image: 'images/cardpic.png',
+                      textColor: Colors.blue,
+                      onpress: (){
+                                      BottomSheeted(context);
+
+                      },
+                      
+                      
+                    );
+                  },
+                ),
+              ),
+            ),
                   ],
                 ),
               ),

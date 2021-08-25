@@ -3,6 +3,7 @@ import 'package:wiki_sleep/components/app_bar.dart';
 import 'package:wiki_sleep/components/rounded_button.dart';
 import 'package:wiki_sleep/components/screen_name.dart';
 import 'package:wiki_sleep/screens/categories_screen.dart';
+import 'package:wiki_sleep/screens/discover_scree.dart';
 import 'package:wiki_sleep/screens/favorite.dart';
 import 'package:wiki_sleep/screens/history_episodes_screen.dart';
 import 'package:wiki_sleep/screens/new_stuff_screen.dart';
@@ -55,7 +56,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => HistoryEpisodesScreen()),
+                      builder: (context) => DiscoverScreen()),
                 );
               },
             ),
