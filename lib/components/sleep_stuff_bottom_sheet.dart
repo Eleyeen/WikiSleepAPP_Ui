@@ -10,7 +10,7 @@ Future<dynamic> SleepStuffBottomSheeted(BuildContext context) {
         isScrollControlled: true,
         builder: (context) {
           return Container(
-            height: MediaQuery.of(context).size.height / 1.5,
+            height: MediaQuery.of(context).size.height / 1.3,
             color: Color(0xFF737373),
             child: Container(
               decoration: new BoxDecoration(

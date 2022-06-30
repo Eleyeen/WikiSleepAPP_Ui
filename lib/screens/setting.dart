@@ -16,10 +16,10 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  void _changeLanguage(Language language) async {
-    Locale _locale = await setLocale(language.languageCode);
-    MyApp.setLocale(context, _locale);
-  }
+  // void _changeLanguage(Language language) async {
+  //   Locale _locale = await setLocale(language.languageCode);
+  //   MyApp.setLocale(context, _locale);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -140,34 +140,34 @@ class _SettingScreenState extends State<SettingScreen> {
                 print("Setting");
               },
             ),
-            Container(
-              child: Center(
-                  child: DropdownButton<Language>(
-                iconSize: 30,
-                hint: Text(getTranslated(context, 'change_language')),
-                onChanged: (
-                  Language? language) {
-                  _changeLanguage(language!);
-                },
-                items: Language.languageList()
-                    .map<DropdownMenuItem<Language>>(
-                      (e) => DropdownMenuItem<Language>(
-                        value: e,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Text(
-                              e.flag,
-                              style: TextStyle(fontSize: 30),
-                            ),
-                            Text(e.name)
-                          ],
-                        ),
-                      ),
-                    )
-                    .toList(),
-              )),
-            ),
+            // Container(
+            //   child: Center(
+            //       child: DropdownButton<Language>(
+            //     iconSize: 30,
+            //     hint: Text(getTranslated(context, 'change_language')),
+            //     onChanged: (
+            //       Language? language) {
+            //       _changeLanguage(language!);
+            //     },
+            //     items: Language.languageList()
+            //         .map<DropdownMenuItem<Language>>(
+            //           (e) => DropdownMenuItem<Language>(
+            //             value: e,
+            //             child: Row(
+            //               mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //               children: <Widget>[
+            //                 Text(
+            //                   e.flag,
+            //                   style: TextStyle(fontSize: 30),
+            //                 ),
+            //                 Text(e.name)
+            //               ],
+            //             ),
+            //           ),
+            //         )
+            //         .toList(),
+            //   )),
+            // ),
           ],
         ),
       ),
